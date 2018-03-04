@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stuffinder.MainPage"
+             Title="Stuffinder"
+             BackgroundColor="#262626">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 40, 20, 20"
+                    Android="20, 20, 20, 20"
+                    WinPhone="20, 20, 20, 20"/>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Entry x:Name="Player1Entry"  Grid.Row="1"
+                   HeightRequest="42"
+                   Placeholder="Player 1"
+                   PlaceholderColor="#07BAFF"
+                   FontSize="Medium"
+                   TextColor="#07BAFF"
+                   BackgroundColor="Transparent"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center" />
+            <Entry x:Name="Player2Entry"  Grid.Row="3"
+                   HeightRequest="42"
+                   Placeholder="Player 2"
+                   PlaceholderColor="#fe2e64"
+                   FontSize="Medium"
+                   TextColor="#fe2e64"
+                   BackgroundColor="Transparent"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center" />
+            <Button x:Name="StartGameBut" Font="Large" Margin="0,20,0,0" Text="Start Game" Clicked="OnClicked" Grid.Row="4"
+                    BackgroundColor="White" TextColor="#262626"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
