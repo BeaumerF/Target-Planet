@@ -1,4 +1,4 @@
-![logo](./TP/Pictures/logo.png)
+![logo](./TP/pictures/logo.png)
 
 # Target-Planet
 Fun games to play with your camera.
