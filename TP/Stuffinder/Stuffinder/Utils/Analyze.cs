@@ -1,11 +1,10 @@
 ﻿using System;
 using Microsoft.ProjectOxford.Vision;
 using Microsoft.ProjectOxford.Vision.Contract;
-using Newtonsoft.Json.Linq;
-using Plugin.Media.Abstractions;
 using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Text;
 
 namespace Stuffinder
 {
@@ -25,6 +24,36 @@ namespace Stuffinder
                 return null;
             var _res = await visionClient.DescribeAsync(inputFile);
             return (_res.Description);
+        }
+
+        public async Task<String> AnalyzeTextAsync(Stream inputFile)
+        {
+            if (inputFile.Length == 0)
+                return null;
+            var _res = await visionClient.RecognizeTextAsync(inputFile);
+            var txt = GetRetrieveText(_res);
+
+            return (txt);
+        }
+
+        public string GetRetrieveText(OcrResults results)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            if (results != null && results.Regions != null)
+            {
+                foreach (var item in results.Regions)
+                {
+                    foreach (var line in item.Lines)
+                    {
+                        foreach (var word in line.Words)
+                        {
+                            stringBuilder.Append(word.Text);
+                            stringBuilder.Append(" ");
+                        }
+                    }
+                }
+            }
+            return stringBuilder.ToString();
         }
     }
 }

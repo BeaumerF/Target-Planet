@@ -18,7 +18,51 @@ namespace Stuffinder
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
-        void OnClicked(object sender, EventArgs e)
+        void OnClicked_SF(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Player1Entry.Text) || string.IsNullOrWhiteSpace(Player2Entry.Text))
+                Device.BeginInvokeOnMainThread(async () => await DisplayAlert("Error", "You have to complete the fields", "OK"));
+            else
+            {
+                data.user1 = Player1Entry.Text;
+                data.user2 = Player2Entry.Text;
+                var GameP = new GamePage(data, 1);
+                GameP.BindingContext = data;
+                NavigationPage.SetHasBackButton(GameP, true);
+                ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
+
+#if __ANDROID__
+                NavigationPage.SetHasBackButton(GameP, false);
+#endif
+                var stack = Navigation.NavigationStack;
+                if (stack[stack.Count - 1].GetType() != typeof(GamePage))
+                    Navigation.PushAsync(GameP);
+            }
+        }
+
+        void OnClicked_SW(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Player1Entry.Text) || string.IsNullOrWhiteSpace(Player2Entry.Text))
+                Device.BeginInvokeOnMainThread(async () => await DisplayAlert("Error", "You have to complete the fields", "OK"));
+            else
+            {
+                data.user1 = Player1Entry.Text;
+                data.user2 = Player2Entry.Text;
+                var GameP = new SpeedWriter(data);
+                GameP.BindingContext = data;
+                NavigationPage.SetHasBackButton(GameP, true);
+                ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
+
+#if __ANDROID__
+                NavigationPage.SetHasBackButton(GameP, false);
+#endif
+                var stack = Navigation.NavigationStack;
+                if (stack[stack.Count - 1].GetType() != typeof(SpeedWriter))
+                    Navigation.PushAsync(GameP);
+            }
+        }
+
+        void OnClicked_FF(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Player1Entry.Text) || string.IsNullOrWhiteSpace(Player2Entry.Text))
                 Device.BeginInvokeOnMainThread(async () => await DisplayAlert("Error", "You have to complete the fields", "OK"));

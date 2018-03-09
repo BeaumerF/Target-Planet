@@ -52,7 +52,7 @@ namespace Stuffinder
 
         private async void ShowingTimer()
         {
-            for (_second = 1; _second >= 0; _second--)
+            for (_second = 30; _second >= 0; _second--)
             {
                 Countdown.Text = Convert.ToString(_second) + " seconds";
                 await Task.Delay(1000);

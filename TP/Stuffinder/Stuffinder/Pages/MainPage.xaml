@@ -18,6 +18,8 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
 
@@ -39,7 +41,11 @@
                    BackgroundColor="Transparent"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="Center" />
-            <Button x:Name="StartGameBut" Font="Large" Margin="0,20,0,0" Text="Start Game" Clicked="OnClicked" Grid.Row="4"
+            <Button x:Name="StartSFBut" Font="Large" Margin="0,20,0,0" Text="Play Stuff Finder" Clicked="OnClicked_SF" Grid.Row="4"
+                    BackgroundColor="White" TextColor="#262626"/>
+            <Button x:Name="StartSWBut" Font="Large" Margin="0,20,0,0" Text="Play Speed Writer" Clicked="OnClicked_SW" Grid.Row="5"
+                    BackgroundColor="White" TextColor="#262626"/>
+            <Button x:Name="StartFFBut" Font="Large" Margin="0,20,0,0" Text="Play Face Fighter" Clicked="OnClicked_FF" Grid.Row="6"
                     BackgroundColor="White" TextColor="#262626"/>
         </Grid>
     </ContentPage.Content>

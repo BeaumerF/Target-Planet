@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stuffinder.SpeedWriter"
+             BackgroundColor="#262626">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 40, 20, 20"
+                    Android="20, 20, 20, 20"
+                    WinPhone="20, 20, 20, 20"/>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="Label" Font="Medium" XAlign="Center" Text="You have to write"/>
+            <Label x:Name="Text" Font="Large"  XAlign="Center" Text="HELL" />
+            <Label x:Name="Countdown" Font="Medium" XAlign="Center" Text="first !" />
+
+            <Button x:Name="PlayerA" Text="" TextColor="White" Clicked="CameraClicked" />
+
+            <Button x:Name="PlayerB" Text="" TextColor="White" Clicked="CameraClicked" />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
