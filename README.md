@@ -26,7 +26,7 @@ Don't worry, we don't save your photo (but it could be funny) !
 ## To do
 - [X] Design
 - [X] Stuff Finder
-- [ ] Speed Writer
+- [X] Speed Writer
 - [ ] Face Fighter
 
 - [ ] Tizen Compatibility
