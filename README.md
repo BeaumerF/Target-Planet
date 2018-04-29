@@ -1,7 +1,7 @@
 ![logo](./TP/pictures/logo.png)
 
 # Target-Planet
-Fun games to play with your camera.
+Fun games to play with your camera on Windows, Windows Phone, Android, iOS and Tizen.
 
 ### Stuff Finder
 In this Game, both players will have 30sec to take a photo of a random item chosen by the app. Then, the Computer Vision IA will check if the photo corresponds.
